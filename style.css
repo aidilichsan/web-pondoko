@@ -38,18 +38,30 @@ nav {
   font-size: 30px;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease-in-out;
 }
 .nav_bar a {
-  font-size: 18px;
+  position: relative;
+  font-size: 20px;
   margin: 10px;
   color: rgba(0, 0, 0, 0.589);
+  display: inline-block;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+.nav_bar a:hover {
+  transform: translateY(-5px);
+  color: #000;
 }
 input {
+  /* font-size: 16px; */
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.589);
   padding: 3px 10px;
-  color: rgba(0, 0, 0, 0.589);
+  color: #000;
+  letter-spacing: 1px;
   background-color: transparent;
+  /* width: 900px; */
 }
 input::placeholder {
   color: rgba(0, 0, 0, 0.589);
@@ -64,6 +76,18 @@ input::placeholder {
   font-size: 22px;
   color: rgba(0, 0, 0, 0.589);
 }
+.menu {
+  display: none;
+}
+.menu i {
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.589);
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* hero */
 .banner {
   position: absolute;
   top: 200px;
@@ -88,34 +112,33 @@ input::placeholder {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  
 }
-img{
+img {
   width: 130px;
   border-radius: 5px;
 }
-h2{
+h2 {
   color: #333;
-  font-size:38px ;
+  font-size: 38px;
   margin-left: 10px;
 }
-.artikel-container{
+.artikel-container {
   display: flex;
   justify-content: space-between;
   margin: 40px 80px;
 }
-.artikel-container p{
+.artikel-container p {
   font-weight: 600;
   font-size: 20px;
   color: #333;
 }
-.artikel-date{
+.artikel-date {
   color: #333333a1;
   margin-top: 10px;
 }
 
 /* tanya jawab */
-.tanya-jawab{
+.tanya-jawab {
   position: relative;
   display: flex;
   top: 400px;
@@ -123,8 +146,8 @@ h2{
   margin: auto;
 }
 .tanya-side,
-.tanya-right{
-  flex : 1;
+.tanya-right {
+  /* flex: 1; */
   padding: 20px;
 }
 .tanya-side a {
@@ -137,20 +160,21 @@ h2{
   border-radius: 5px;
   margin: 5px;
 }
-.tanya-right{
+.tanya-right {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
   margin: 40px 0 0 20px;
+  /* border: 1px solid #333; */
 }
-.tanya-right a{
+.tanya-right a {
   display: block;
   color: #333;
   font-weight: 600;
   font-size: 20px;
   margin: 20px 0;
 }
-.tombol{
+.tombol {
   float: right;
   padding: 10px 20px;
   background-color: #333;
@@ -165,56 +189,66 @@ h2{
   top: 400px;
   left: 0;
   right: 0;
-  margin:100px auto;
+  margin: 100px auto;
   width: 900px;
   display: block;
   align-items: center;
   justify-content: center;
   /* border: 1px solid #333; */
 }
-.kajian-info{
+.kajian-info {
   align-items: center;
   display: grid;
-  grid-template-columns:300px 200px 400px;
+  grid-template-columns: 300px 200px 400px;
   gap: 20px;
   margin: 20px auto;
-background-color: white;
-padding: 10px 20px;
-border-radius: 5px;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
-.kajian-info p{
+.kajian-info p {
   color: #333;
   font-weight: 600;
   font-size: 20px;
   margin-right: 20px;
-    /* border: 1px solid #333; */
+  /* border: 1px solid #333; */
 }
 
 /* footer */
-footer{
+footer {
   background-color: #1b1b1b;
+  display: block;
+  justify-content: space-between;
+  padding: 40px 80px 0 80px;
+    position: relative;
+  top: 400px;
+}
+.footer-top{
   display: flex;
   justify-content: space-between;
-  padding: 80px ;
 }
-.footer-judul h2{
+.footer-botton{
+  margin-top: 40px;
+  align-items: center;
+}
+.footer-judul h2 {
   color: white;
   width: max-content;
   margin-right: 20px;
 }
-.footer-contact{
+.footer-contact {
   display: flex;
   flex-direction: column;
   width: 300px;
   margin-left: 20px;
 }
-.footer-contact p{
+.footer-contact p {
   display: flex;
   align-items: center;
   color: rgba(255, 255, 255, 0.801);
   margin: 5px 0;
 }
-.footer-contact p i{
+.footer-contact p i {
   margin-right: 10px;
 }
 .footer-sosmed {
@@ -224,14 +258,90 @@ footer{
   width: 300px;
   margin-left: 20px;
 }
-.logo-sosmed i{
+.logo-sosmed i {
   font-size: 36px;
   color: whitesmoke;
-  margin:20px 5px;
+  margin: 20px 5px;
   float: right;
 }
-.copy-right{
+.copy-right {
   color: rgba(255, 255, 255, 0.801);
   text-align: center;
   background-color: #1b1b1b;
+  position: relative;
+}
+
+/* media responsif */
+/* tablet */
+@media (max-width: 1020px) and (min-width: 768px) {
+  
+  header {
+    height: 500px;
+  }
+  .nav_bar {
+    display: none;
+  }
+  input{
+    width: 400px;
+    margin-right: -100px;
+  }
+  .menu {
+    display: flex;
+  }
+  .nav_login {
+    display: none;
+  }
+  .banner_text {
+    width: max-content;
+  }
+  /* artikel */
+  .artikel{
+    width: 700px;
+    top: 460px;
+  }
+  .artikel-container {
+    margin: 20px 40px;
+  }
+
+
+  /* tanya jawab */
+  .tanya-jawab {
+    top: 340px;
+    width: max-content;
+  }
+  .tanya-side{
+    display: none;
+  }
+  .tanya-right{
+    width: 500px;
+    margin: 0 auto;
+  }
+  .tanya-jawab{
+    margin-top: 20px;
+  }
+
+  /* kajian */
+  .kajian{
+    margin-top: 15px;
+    width: max-content;
+  }
+  .kajian-info{
+    grid-template-columns: 200px 200px 200px;
+    width: max-content;
+    gap: 10px;
+  }
+
+  /* footer */
+  footer{
+    margin-top: 200px;
+    width: 100%;
+    display: block;
+  }
+  .footer-top{
+    display: block;
+  }
+  
+.logo-sosmed i {
+  float: none;
+}
 }
